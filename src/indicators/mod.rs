@@ -53,7 +53,7 @@ mod aroon;
 pub use aroon::{Aroon, AroonInstance};
 
 mod average_directional_index;
-pub use average_directional_index::{AverageDirectionalIndex, AverageDirectionalIndexInstance};
+pub use average_directional_index::{AverageDirectionalIndex, AverageDirectionalIndexInstance, ADX};
 
 mod awesome_oscillator;
 pub use awesome_oscillator::{AwesomeOscillator, AwesomeOscillatorInstance};
