@@ -1,10 +1,12 @@
+use serde::{Deserialize, Serialize};
 use crate::core::{
 	Error, IndicatorConfig, IndicatorInstance, IndicatorResult, Method, MovingAverageConstructor,
 	PeriodType, ValueType, OHLCV,
 };
 use crate::helpers::MA;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Copy)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct ATR<M: MovingAverageConstructor = MA> {
 	method1: M,
 	method2: M,
@@ -73,6 +75,7 @@ impl Default for ATR {
 }
 
 #[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct ATRInstance<M: MovingAverageConstructor = MA> {
 	cfg: ATR<M>,
 
