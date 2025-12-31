@@ -53,7 +53,9 @@ mod aroon;
 pub use aroon::{Aroon, AroonInstance};
 
 mod average_directional_index;
-pub use average_directional_index::{AverageDirectionalIndex, AverageDirectionalIndexInstance, ADX};
+pub use average_directional_index::{
+	AverageDirectionalIndex, AverageDirectionalIndexInstance, ADX,
+};
 
 mod awesome_oscillator;
 pub use awesome_oscillator::{AwesomeOscillator, AwesomeOscillatorInstance};
@@ -116,7 +118,7 @@ mod know_sure_thing;
 pub use know_sure_thing::{KnowSureThing, KnowSureThingInstance};
 
 mod macd;
-pub use macd::{MovingAverageConvergenceDivergence, MACD, MACDInstance};
+pub use macd::{MACDInstance, MovingAverageConvergenceDivergence, MACD};
 
 mod momentum_index;
 pub use momentum_index::{MomentumIndex, MomentumIndexInstance};
@@ -146,7 +148,7 @@ mod stochastic_oscillator;
 pub use stochastic_oscillator::{StochasticOscillator, StochasticOscillatorInstance};
 
 mod trix;
-pub use trix::{Trix, TRIXInstance};
+pub use trix::{TRIXInstance, Trix};
 
 mod trend_strength_index;
 pub use trend_strength_index::{TrendStrengthIndex, TrendStrengthIndexInstance};
@@ -154,5 +156,8 @@ pub use trend_strength_index::{TrendStrengthIndex, TrendStrengthIndexInstance};
 mod true_strength_index;
 pub use true_strength_index::{TrueStrengthIndex, TrueStrengthIndexInstance};
 
+mod atr;
 mod woodies_cci;
+pub use atr::{ATRInstance, ATR};
+
 pub use woodies_cci::{WoodiesCCI, WoodiesCCIInstance};
