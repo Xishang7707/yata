@@ -8,9 +8,9 @@ use crate::helpers::MA;
 #[derive(Debug, Clone, Copy)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct ATR<M: MovingAverageConstructor = MA> {
-	method1: M,
-	method2: M,
-	period: PeriodType,
+	pub method1: M,
+	pub method2: M,
+	pub period: PeriodType,
 }
 
 impl<M: MovingAverageConstructor> IndicatorConfig for ATR<M> {
