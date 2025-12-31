@@ -54,6 +54,9 @@ pub struct AverageDirectionalIndex<M: MovingAverageConstructor = MA> {
 	pub zone: ValueType,
 }
 
+/// Just an alias for `AverageDirectionalIndex`
+pub type ADX<M = MA> = AverageDirectionalIndex<M>;
+
 impl<M: MovingAverageConstructor> IndicatorConfig for AverageDirectionalIndex<M> {
 	type Instance = AverageDirectionalIndexInstance<M>;
 
