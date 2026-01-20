@@ -110,7 +110,7 @@ mod tests {
 	use crate::helpers::assert_eq_float;
 	use std::fmt::Debug;
 
-	pub(super) fn test_const<P, I: ?Sized, O: Debug + PartialEq>(
+	pub(super) fn test_const<P, I: ?Sized, O: Debug + Clone + PartialEq>(
 		method: &mut dyn Method<Params = P, Input = I, Output = O>,
 		input: &I,
 		output: &O,

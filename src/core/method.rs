@@ -69,7 +69,7 @@ pub trait Method {
 	/// Input value type
 	type Input: ?Sized;
 	/// Output value type
-	type Output;
+	type Output: Clone;
 
 	/// Static method for creating an instance of the method with given `parameters` and initial `value` (simply first input value)
 	fn new(parameters: Self::Params, initial_value: &Self::Input) -> Result<Self, Error>

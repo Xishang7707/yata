@@ -171,7 +171,7 @@ impl<M: MovingAverageConstructor> AverageDirectionalIndexInstance<M> {
 		let plus_di_value = self.plus_di.next(&plus_dm); // +DI
 		let minus_di_value = self.minus_di.next(&minus_dm); // -DI
 
-		(plus_di_value / true_range, minus_di_value / true_range)
+		(plus_di_value / true_range.clone(), minus_di_value / true_range)
 	}
 
 	fn adx(&mut self, plus: ValueType, minus: ValueType) -> ValueType {
