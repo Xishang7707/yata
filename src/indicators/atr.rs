@@ -86,6 +86,8 @@ impl<M: MovingAverageConstructor> IndicatorInstance for ATRInstance<M> {
 	fn next<T: OHLCV>(&mut self, candle: &T) -> IndicatorResult {
 		let atr = self.ma.next(&candle.tr_close(self.prev_close));
 		let values = [atr];
+
+		self.prev_close = candle.close();
 		IndicatorResult::new(&values, &[])
 	}
 }
