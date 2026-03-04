@@ -124,7 +124,7 @@ impl IndicatorInstance for BollingerBandsInstance {
 		let source = candle.source(self.cfg.source);
 		let middle = self.ma.next(&source);
 		let sq_error = self.st_dev.next(&source);
-
+std::println!("sq_error: {:?}", sq_error);
 		let upper = middle + sq_error * self.cfg.sigma;
 		let lower = middle - sq_error * self.cfg.sigma;
 
