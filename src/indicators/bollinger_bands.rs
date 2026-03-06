@@ -125,9 +125,8 @@ impl IndicatorInstance for BollingerBandsInstance {
 		let middle = self.ma.next(&source);
 		let sq_error = self.st_dev.next(&source);
 
-		let upper = middle + sq_error * self.cfg.sigma;
-		let v = upper - middle;
-		let lower = middle - v;
+		let upper = sq_error.mul_add(self.cfg.sigma, middle);
+		let lower = sq_error.mul_add(-self.cfg.sigma, middle);
 
 		let values = [upper, middle, lower];
 
